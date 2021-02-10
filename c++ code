@@ -1,0 +1,30 @@
+int workbook(int n, int k, vector<int> arr) {
+        int special=0;
+        int ch=1;
+        int page=1;
+        while(ch<=n)
+        {
+             int ques=arr[ch-1];
+             int quesno=1;
+             int perpage=1;
+             while(quesno<=ques)
+             {
+                 if(quesno==page)
+                 {
+                     special++;
+                 }
+                 if(quesno==ques ||perpage==k)
+                 {
+                     page++;
+                 }
+                 if(perpage==k)
+                 {
+                     perpage=0;
+                 }
+                  quesno++;
+                  perpage++;
+             }
+             ch++;
+        }
+        return special;
+}
